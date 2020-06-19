@@ -1,0 +1,8 @@
+name: SelfShooting
+version: 1.0
+author: 7isenko
+main: io.github._7isenko.selfshooting.SelfShooting
+commands:
+  bows:
+    description: Turns on/off the plugin
+    usage: /bows
