@@ -6,3 +6,8 @@ commands:
   bows:
     description: Turns on/off the plugin
     usage: /bows
+    permission: selfshooting.command
+permissions:
+  selfshooting.command:
+    description: Permission to turn on/off the self shooting mode
+    default: op
