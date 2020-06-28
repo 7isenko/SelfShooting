@@ -1,9 +1,12 @@
-### SelfShooting
+## SelfShooting
 
-Turn it on with /bows
-Turn it off with /bows
+### Usage
+`/bows` or `/bows all` - including skeletons;
+`/bows players` - only for players
 
-If you want permissions or smth to be added - message me.
+Turn it off with `/bows`
+
+If you want smth to be added - message me.
 
 #### What it does?
 When you shot an arrow, you become its passenger.

@@ -4,7 +4,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.entity.EntityShootBowEvent;
-import org.bukkit.scoreboard.Team;
 
 public class BowsCommand implements CommandExecutor {
     private static boolean started = false;
@@ -13,7 +12,12 @@ public class BowsCommand implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!started) {
-            listener = new ShootBowListener();
+            if (args.length == 0 || args[0].equals("all"))
+                listener = new ShootBowListener(true);
+            else if (args[0].equalsIgnoreCase("players"))
+                listener = new ShootBowListener(false);
+            else return false;
+
             listener2 = new ArrowHitListener();
             SelfShooting.server.getPluginManager().registerEvents(listener, SelfShooting.plugin);
             SelfShooting.server.getPluginManager().registerEvents(listener2, SelfShooting.plugin);

@@ -12,8 +12,18 @@ import org.bukkit.inventory.ItemStack;
 import java.util.Random;
 
 public class ShootBowListener implements Listener {
+    boolean affectMobs;
+
+    public ShootBowListener(boolean affectMobs) {
+        this.affectMobs = affectMobs;
+    }
+
     @EventHandler
     public void onShootEvent(EntityShootBowEvent event) {
+        // Check for mobs
+        if (!affectMobs && event.getEntityType() != EntityType.PLAYER)
+            return;
+
         Arrow arrow = (Arrow) event.getProjectile();
         LivingEntity entity = event.getEntity();
 
